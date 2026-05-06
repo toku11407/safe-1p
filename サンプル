@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>無骨カフェ</title>
+<style>
+body {
+  margin:0;
+  font-family: sans-serif;
+  background:#0d0d0d;
+  color:#fff;
+}
+section {
+  padding:60px 20px;
+  max-width:900px;
+  margin:auto;
+}
+.hero {
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  background:url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') center/cover;
+  text-align:center;
+}
+h1 {
+  font-size:2.5em;
+  margin-bottom:10px;
+}
+p {
+  line-height:1.6;
+}
+.btn {
+  margin-top:20px;
+  padding:12px 24px;
+  background:#fff;
+  color:#000;
+  text-decoration:none;
+  border-radius:4px;
+}
+.menu div {
+  margin-bottom:10px;
+}
+.fade {
+  opacity:0;
+  transform:translateY(20px);
+  transition:1s;
+}
+.fade.show {
+  opacity:1;
+  transform:translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+  <h1>無骨な時間を、ここで。</h1>
+  <p>仙台で味わうアメリカンカルチャー</p>
+  <a href="#" class="btn">来店する</a>
+</div>
+
+<section class="fade">
+  <h2>コンセプト</h2>
+  <p>バイクが好きな人も、そうでない人も。<br>
+  ここでは時間がゆっくり流れます。</p>
+</section>
+
+<section class="fade menu">
+  <h2>メニュー</h2>
+  <div>コーヒー ¥500</div>
+  <div>ラテ ¥550</div>
+  <div>バーガー ¥1200</div>
+</section>
+
+<section class="fade">
+  <h2>雰囲気</h2>
+  <p>落ち着いた空間で、静かな時間を。</p>
+</section>
+
+<section class="fade">
+  <h2>口コミ</h2>
+  <p>「雰囲気が最高」<br>「また来たい場所」</p>
+</section>
+
+<section class="fade">
+  <h2>アクセス</h2>
+  <p>仙台市〇〇区〇〇</p>
+</section>
+
+<script>
+const fades = document.querySelectorAll('.fade');
+window.addEventListener('scroll', () => {
+  fades.forEach(el => {
+    const rect = el.getBoundingClientRect().top;
+    if(rect < window.innerHeight - 100){
+      el.classList.add('show');
+    }
+  });
+});
+</script>
